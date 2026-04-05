@@ -1,0 +1,4 @@
+iphone-backup-decrypt>=0.9.0
+Pillow>=10.0
+pillow-heif>=0.10
+pyyaml>=6.0

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build output
+dist/
+build/
+release/
+pybackend/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local

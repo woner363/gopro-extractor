@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* macOS-style titlebar drag region */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+
+.titlebar-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Smooth progress bar animation */
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}

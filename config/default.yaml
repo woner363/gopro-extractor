@@ -1,0 +1,20 @@
+# GoPro Quik iPad Media Extractor Configuration
+
+# iPad backup settings
+backup:
+  password: ""                      # Set your iPad backup encryption password
+  reuse_existing: true              # Reuse backup if recent enough
+  max_age_hours: 24                 # Max backup age before requiring refresh
+
+# NAS upload settings (QNAP via SMB mount)
+nas:
+  mount_path: ""                    # e.g., /Volumes/QNAP/GoPro
+  organize_by_date: true            # Organize into YYYY/MM/ subdirectories
+
+# Staging area
+staging:
+  cleanup_after_upload: true        # Delete temp files after upload
+
+# Logging
+logging:
+  level: INFO

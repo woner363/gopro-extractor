@@ -1,0 +1,64 @@
+{
+  "name": "gopro-extractor",
+  "version": "1.0.0",
+  "description": "Extract GoPro Quik media from iPad and upload to QNAP NAS",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build:renderer": "vite build",
+    "build:python": ".venv/bin/pyinstaller --onedir --name gopro-backend --noconfirm --clean --distpath pybackend --hidden-import=yaml --hidden-import=PIL --hidden-import=pillow_heif --hidden-import=iphone_backup_decrypt backend/main.py",
+    "build": "npm run build:renderer && npm run build:python && electron-builder --mac",
+    "start": "electron ."
+  },
+  "keywords": [
+    "gopro",
+    "ipad",
+    "nas",
+    "qnap"
+  ],
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "appId": "com.gopro.extractor",
+    "productName": "GoPro Extractor",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "icon": null
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "pybackend/gopro-backend",
+        "to": "pybackend/gopro-backend",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "config",
+        "to": "config",
+        "filter": ["**/*"]
+      }
+    ],
+    "directories": {
+      "output": "release"
+    }
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "electron": "^41.1.0",
+    "electron-builder": "^26.0.12",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.3",
+    "wait-on": "^9.0.4"
+  },
+  "dependencies": {
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
