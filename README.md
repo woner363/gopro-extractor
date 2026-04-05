@@ -142,7 +142,7 @@ backup:
   max_age_hours: 48         # Max age before re-backup
 
 nas:
-  mount_path: ""            # SMB mount path (e.g. /Volumes/home/Photos)
+  mount_path: ""            # SMB mount path (e.g. /Volumes/NAS/GoPro)
   organize_by_date: true    # Sort into YYYY/MM/ folders
 
 staging:

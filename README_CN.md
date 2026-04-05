@@ -141,7 +141,7 @@ backup:
   max_age_hours: 48         # 备份最大有效期（小时）
 
 nas:
-  mount_path: ""            # SMB 挂载路径（如 /Volumes/home/Photos）
+  mount_path: ""            # SMB 挂载路径（如 /Volumes/NAS/GoPro）
   organize_by_date: true    # 按 YYYY/MM/ 目录整理
 
 staging:
